@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Programa que calcula diferencia de edad</h1>
+
+    <script>
+
+    //Función para saltar de línea.
+    function saltoLinea2(n){
+        for(i = 0; i < n; i++){
+            document.write("<br>");
+        }
+
+    }
+
+    //Función que solo concatena una cadena predeterminada y otra cadena como parámetro.
+    function imprimir(string){
+        document.write(string);
+    }
+
+    //Función que calcula la diferencia de edades basado en los años únicamente.
+    function calculaDiferencia(edad1, edad2){
+        return diferencia = Math.abs(edad1 - edad2);
+    }
+
+    let edad1 = parseInt(prompt("Introduce tu año de nacimiento: "));
+    let edad2 = parseInt(prompt("Introduce la edad de tu hermano: "));
+
+    imprimir("Su diferencia de edades absoluta es: ");
+    document.write(calculaDiferencia(edad1, edad2) + " años.");
+
+    </script>
+
+
+
+</body>
+</html>

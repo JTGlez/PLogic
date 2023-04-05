@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+<h1>PROGRAMA</h1>
+<script>
+
+    //Usa un ciclo for para saltar 5 veces con la etiqueta br.
+    function saltarLinea() {
+        for(i = 0; i < 5; i++){
+            document.write("<br>");
+            if (i == 2){
+                document.write("<hr>");
+            }  
+        } 
+    }  
+    function imprimir(frase) {
+        document.write("<big>" + frase + "</big> ");
+        saltarLinea();
+    }
+    var anho = 2025;
+    imprimir("Hola amigos");
+    // Este código calcula las edades de Juan, Pedro y Carlos.
+    imprimir("Juan tiene: " + (anho-2000) + " años");
+    imprimir("Pedro tiene: " + (anho-1995) + " años");
+    anho = 2030
+    imprimir("Carlos tiene: " + (anho-2005) + " años");
+</script>

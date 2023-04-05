@@ -1,0 +1,60 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>IMC</title>
+    </head>
+    <body>
+
+        <h1>Calculadora de IMC</h1>
+        <script>
+
+             //Función para saltar de línea.
+            function saltoLinea2(n){
+                for(i = 0; i < n; i++){
+                    document.write("<br>");
+                }
+
+            }
+
+            //Función que solo concatena una cadena predeterminada y otra cadena como parámetro.
+            function imprimir(string){
+                document.write(string);
+                saltoLinea2(1);
+            }
+
+            pesoJorge = 100;
+            alturaJorge = 1.86;
+            imcJorge = (pesoJorge) / (alturaJorge * alturaJorge);
+
+            imprimir("El IMC de Jorge es: " + imcJorge)
+
+            //Función que calcula el IMC de forma general.
+
+            function imcX(peso, altura, nombre){
+                let imc = (peso) / (altura * altura);
+                return "El IMC de " + nombre + " es: " + imc;
+            }
+
+            function imc(peso, altura){
+                let imc = (peso) / (altura * altura);
+                return imc
+            }
+
+            imprimir(imc(84, 1.86, "Gabo"));
+
+            //Función que calcula promedios de IMC.
+            function imcProm(){
+                let x1 = imc(102, 1.98); 
+                let x2 = imc(92, 1.80);
+                return (x1+x2)/2
+            }
+
+            imprimir("Promedio de ambos: " + imcProm());
+
+        </script>
+        
+    </body>
+    </html>

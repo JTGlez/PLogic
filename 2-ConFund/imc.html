@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+</head>
+<body>
+
+    <h1>Calculadora de IMC</h1>
+    <script>
+
+         //Función para saltar de línea.
+        function saltoLinea2(n){
+            for(i = 0; i < n; i++){
+                document.write("<br>");
+            }
+
+        }
+
+        //Función que solo concatena una cadena predeterminada y otra cadena como parámetro.
+        function imprimir(string){
+            document.write(string);
+            saltoLinea2(1);
+        }
+
+        function imc(peso, altura){
+            let imc = (peso) / (altura * altura);
+            return imc
+        }
+
+        let nombre = prompt("Introduce tu nombre");
+        let peso = parseInt(prompt("Introduce tu peso"));
+        let altura = parseFloat(prompt("Introduce tu altura"));
+
+        imcCalculado = imc(peso, altura);
+
+        if (imcCalculado > 30.0){
+            imprimir("Hola " + nombre + ". Tu IMC es de " + imcCalculado + ", y corresponde a Obesidad.");
+        }
+        else if (imcCalculado >= 25 && imcCalculado <30){
+            imprimir("Hola " + nombre + ". Tu IMC es de " + imcCalculado + ", y corresponde a Sobrepeso.");
+        }
+        else if (imcCalculado >= 18.5 && imcCalculado <=24.9){
+            imprimir("Hola " + nombre + ". Tu IMC es de " + imcCalculado + ", y corresponde a un peso normal.");
+        }
+        else if (imcCalculado < 18.5){
+            imprimir("Hola " + nombre + ". Tu IMC es de " + imcCalculado + ", y presentas un peso insuficiente.");
+        }
+
+
+    </script>
+    
+</body>
+</html>

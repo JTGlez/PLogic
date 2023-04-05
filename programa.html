@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página bonita</title>
+</head>
+<body>
+
+
+<h1>Calculadora de edad</h1>
+
+<script>
+    //Nota: HTML no diferencía entre mayúsculas y minúsculas en las etiquetas.
+
+    document.write("La edad de Jorge es...");
+    document.write("<br>");
+    //Realiza el cálculo dinámicamente.
+    document.write(25+8);
+    document.write("<br>");
+    document.write("No es cierto: <br>");
+    document.write((25*8)+ (5/3));
+
+    let edadJuan = 2023-2000;
+    let edadJorge = 24;
+    let anio = 2023;
+
+    document.write("<br>Juan tiene: " + (anio-2000) + " años");
+    document.write("<br>Juan tiene: " + edadJuan + " años");
+
+    promedio = ((edadJuan + edadJorge) / 2);
+
+    document.write("Promedio de edades: " + Math.round(promedio) );
+
+    let saltoLinea = "<br>";
+
+    saltoLinea2(2);
+
+    document.write("Salto en el tiempo xdxDxdDxD");
+
+    function saltoLinea2(n){
+
+        for(i = 0; i < n; i++){
+            document.write("<br>");
+        }
+        
+    }
+
+    saltoLinea2(5);
+
+    document.write("Salto más pro")
+
+</script>
+    
+</body>
+</html>

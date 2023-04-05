@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+     //Función para saltar de línea.
+     function saltoLinea2(n){
+        for(i = 0; i < n; i++){
+            document.write("<br>");
+        }
+
+     }
+
+    //Función que solo concatena una cadena predeterminada y otra cadena como parámetro.
+    function imprimir(string){
+        document.write(string);
+        saltoLinea2(1);
+    }
+
+    //Realizamos casteo para transformar las cadenas input en números.
+    let victorias = parseInt(prompt("Informe la cantidad de victorias."));
+    let empates = parseInt(prompt("Informe la cantidad de empates."));
+
+    let puntosTotal = (victorias * 3) + empates;
+
+    imprimir("El total de puntos es: " + puntosTotal)
+
+
+
+
+    </script>
+
+    
+</body>
+</html>

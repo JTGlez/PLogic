@@ -25,6 +25,7 @@
         }
         
         function alterarColor(evento) {
+            //Array de colores.
             let colores = ["#0000ff", "#ff0000", "#008000"];
             console.log(pincel.fillStyle);
             let indiceColor = colores.indexOf(String(pincel.fillStyle));
@@ -33,7 +34,7 @@
             pincel.fillStyle = nuevoColor;
             alert("Cambiaste el color a " + pincel.fillStyle + ".");
         }
-        //Array de colores.
+
 
         //Asociamos un click en la pantalla a un objeto.
         let pantalla = document.querySelector("canvas");

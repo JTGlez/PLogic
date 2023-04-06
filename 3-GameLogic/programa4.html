@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>¡Atrápame si puedes!</h1>
+
+    <canvas width= "600" height = "400">
+
+    </canvas>
+
+    <script>
+
+        //Dibujamos círculos en la pantalla.
+        function dibujarCirculo(x, y, r, color){
+            pincel.fillStyle = color;
+            pincel.beginPath();
+            pincel.arc(x, y, r, 0, 2*Math.PI);
+            pincel.fill();
+        }
+
+        function limpiarPantalla(){
+            pincel.clearRect(0, 0, 600, 400);
+        }
+
+        //Retorna un entero aleatorio en un rango de 0 al número max.
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+        }
+
+        function actualizaPantalla(){
+            limpiarPantalla();
+            x = getRandomInt(600);
+            y = getRandomInt(400);
+            diseñarObjetivo(x, y);
+            x++;
+        }
+
+        //Genera el tiro al blanco.
+        function diseñarObjetivo(x, y){
+            dibujarCirculo(x, y, radio + 20, "red");
+            dibujarCirculo(x, y, radio + 10, "white");
+            dibujarCirculo(x, y, radio, "red");
+            
+        }
+
+        function capturaDisparo(evento){
+
+            var xC = evento.pageX - pantalla.offsetLeft;
+            var yC = evento.pageY - pantalla.offsetTop;
+            if((xC < x + radio) && 
+               (xC > x - radio) &&
+               (yC < y + radio) &&
+               (yC > y - radio)) {
+
+                alert("Acertaste!");
+
+            }
+            
+        }
+
+        let pantalla = document.querySelector("canvas");
+        let pincel = pantalla.getContext("2d");
+        pincel.fillStyle = "lightgrey";
+        pincel.fillRect(0, 0, 600, 400);
+
+        let x = 0;
+        var radio = 10;
+
+        
+        setInterval(actualizaPantalla, 1000);
+
+        pantalla.onclick = capturaDisparo;
+        
+
+    </script>
+
+    
+</body>
+</html>

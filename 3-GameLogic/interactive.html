@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <canvas width= "600" height = "400">
+
+    </canvas>
+
+    <script>
+        function exhibirAlerta(evento){
+            let x = evento.pageX - pantalla.offsetLeft;
+            let y = evento.pageY - pantalla.offsetTop;
+            console.log(evento);
+            alert("Usted hizo un click :0 en " + x + "," + y);
+        }
+
+        //Dibujamos círculos en la pantalla.
+        function dibujarCirculo(evento){
+            let x = evento.pageX - pantalla.offsetLeft;
+            let y = evento.pageY - pantalla.offsetTop;
+            pincel.fillStyle = "blue";
+            pincel.beginPath();
+            pincel.arc(x, y, 10, 0, 2*3.14);
+            pincel.fill();
+        }
+
+        //Asociamos un click en la pantalla a un objeto.
+        let pantalla = document.querySelector("canvas");
+        let pincel = pantalla.getContext("2d");
+
+        /*La función se asigna al evento onclick del objeto pantalla, no se }
+        está invocando la función sino que se pasa como referencia a onclick,
+        es decir, como un callback.
+        
+        Cuando un usuario haga click en el objeto pantalla se ejecutará la 
+        función exhibirAlerta. Si usáramos paréntesis, esta se ejecutaría de
+        inmediato al momento de asignar. Solo aplica al canvas.*/
+        pantalla.onclick = dibujarCirculo;
+
+
+
+
+
+    </script>
+
+    
+</body>
+</html>
